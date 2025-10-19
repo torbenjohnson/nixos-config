@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   fonts = {
@@ -82,8 +82,8 @@
         style = "slight";
       };
       subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
+        rgba = lib.mkDefault "rgb";
+        lcdfilter = lib.mkDefault "default";
       };
     };
   };
