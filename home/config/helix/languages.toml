@@ -1,0 +1,29 @@
+[language-server.rust-analyzer.config]
+checkOnSave = true
+check.command = "clippy"
+cargo.targetDir = true
+diagnostics.experimental.enable = true
+diagnostics.styleLints.enable = true
+
+# inlayHints.closureReturnTypeHints.enable = "always"
+# inlayHints.expressionAdjustmentHints.enable = "always"
+# inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+# inlayHints.lifetimeElisionHints.useParameterNames = true
+# inlayHints.typeHints.hideClosureInitialization = false
+
+[[language]]
+name = "rust"
+auto-format = true
+roots = ["Cargo.toml"]
+
+[language.auto-pairs]
+'(' = ")"
+'{' = "}"
+'[' = "]"
+'"' = '"'
+'`' = "`"
+
+[[language]]
+name = "toml"
+formatter = { command = "tombi", args = ["format", "-"] }
+auto-format = true

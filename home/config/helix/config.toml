@@ -1,0 +1,20 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+line-number = "relative"
+scrolloff = 15
+end-of-line-diagnostics = "hint"
+auto-pairs = false
+auto-format = true
+text-width = 80
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+soft-wrap.enable = true
+soft-wrap.max-indent-retain = 80
+soft-wrap.wrap-indicator = ""
+auto-save.focus-lost = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-inlay-hints = true
