@@ -47,7 +47,7 @@
               users.tor = import ./home/home.nix;
             };
           }
-          ./hosts/eta/configuration.nix
+          ./hosts/psi/configuration.nix
         ];
       };
 
