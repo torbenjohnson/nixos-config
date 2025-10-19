@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home = {
@@ -120,11 +120,22 @@
 
     # Link native config files (editable without rebuild)
     configFile = {
-      "helix/config.toml".source = ./config/helix/config.toml;
-      "helix/languages.toml".source = ./config/helix/languages.toml;
-      "git/config".source = ./config/git/config;
-      "Code/User/settings.json".source = ./config/vscode/settings.json;
-      "Code/User/keybindings.json".source = ./config/vscode/keybindings.json;
+      "helix/config.toml".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/helix/config.toml";
+      "helix/languages.toml".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/helix/languages.toml";
+      "git/config".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/git/config";
+      "Code/User/settings.json".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/vscode/settings.json";
+      "Code/User/keybindings.json".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/vscode/keybindings.json";
+      "fish/config.fish".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/fish/config.fish";
+      "fish/functions/theme_gruvbox.fish".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/fish/functions/theme_gruvbox.fish";
+      "ghostty/config".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/ghostty/config";
     };
   };
 
