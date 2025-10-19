@@ -2,5 +2,5 @@ theme = Gruvbox Dark Hard
 window-decoration = false
 font-family = "Monospace Neon"
 cursor-style-blink = false
-command = /usr/bin/fish --login --interactive
+command = fish --login --interactive
 working-directory = home
