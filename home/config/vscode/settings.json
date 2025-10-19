@@ -61,5 +61,7 @@
         "pdm": true
     },
     "github.copilot.chat.codeGeneration.useInstructionFiles": false,
-    "github.copilot.chat.customInstructionsInSystemMessage": false
+    "github.copilot.chat.customInstructionsInSystemMessage": false,
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "none"
 }
