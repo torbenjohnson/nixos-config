@@ -15,6 +15,12 @@
     nftables.enable = true;
   };
 
+  # Set regulatory domain for WiFi (Canada)
+  hardware.wirelessRegulatoryDatabase = true;
+  boot.extraModprobeConfig = ''
+    options cfg80211 ieee80211_regdom=CA
+  '';
+
   systemd.network = {
     enable = true;
     networks = {
