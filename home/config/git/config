@@ -3,52 +3,52 @@
     email = torbenjohnson@pm.me
 
 [core]
-        editor = code
+    editor = hx
 
 [column]
-        ui = auto
+    ui = auto
 
 [branch]
-        sort = -committerdate
+    sort = -committerdate
 
 [tag]
-        sort = version:refname
+    sort = version:refname
 
 [init]
-        defaultBranch = main
+    defaultBranch = main
 
 [diff]
-        algorithm = histogram
-        colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 
 [push]
-        default = simple
-        autoSetupRemote = true
-        followTags = true
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 
 [fetch]
-        prune = true
-        pruneTags = true
-        all = true
+    prune = true
+    pruneTags = true
+    all = true
 
 [help]
-        autocorrect = prompt
+    autocorrect = prompt
 
 [commit]
-        verbose = true
+    verbose = true
 
 [rerere]
-        enabled = true
-        autoupdate = true
+    enabled = true
+    autoupdate = true
 
 [rebase]
-        autoSquash = true
-        updateRefs = true
+    autoSquash = true
+    updateRefs = true
 
 [merge]
-        conflictstyle = zdiff3
+    conflictstyle = zdiff3
         
 [filter "lfs"]
 	clean = git-lfs clean -- %f
