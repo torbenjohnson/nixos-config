@@ -35,6 +35,7 @@
       sd # sed alternative
       tree
       duf
+      dua
 
       # CLI Utilities - Networking
       wget # File downloader
