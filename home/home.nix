@@ -36,6 +36,7 @@
       tree
       duf
       dua
+      delta
 
       # CLI Utilities - Networking
       wget # File downloader
