@@ -51,7 +51,7 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
+    dnssec = "false";
     fallbackDns = [
       "1.1.1.1"
       "8.8.8.8"
