@@ -57,5 +57,20 @@
           ./hosts/iso/configuration.nix
         ];
       };
+
+      nixosConfigurations.lp-0098 = nixpkgs.lib.nixosSystem {
+        modules = [
+          disko.nixosModules.disko
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.tor = import ./home/home.nix;
+            };
+          }
+          ./hosts/lp-0098/configuration.nix
+        ];
+      };
     };
 }
