@@ -26,5 +26,7 @@
 
   networking.hostName = "lp-0098";
 
+  services.hardware.bolt.enable = true;
+
   system.stateVersion = "25.05";
 }
