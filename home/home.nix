@@ -67,7 +67,7 @@
 
       # GUI System Monitoring
       mission-center # System monitor
-      gnome-resources # GNOME resources monitor
+      resources # GNOME resources monitor
       impala # System monitor
 
       # Media Applications
