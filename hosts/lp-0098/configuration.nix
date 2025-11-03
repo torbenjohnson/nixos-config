@@ -21,6 +21,7 @@
     ../../modules/services/audio.nix
     ../../modules/services/desktop.nix
     ../../modules/services/power.nix
+    ../../modules/services/podman.nix
     ../../modules/services/ssh.nix
   ];
 

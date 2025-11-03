@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   networking = {
@@ -13,6 +13,9 @@
       };
     };
     nftables.enable = true;
+    firewall = {
+      trustedInterfaces = [ "podman+" ];
+    };
   };
 
   # Set regulatory domain for WiFi (Canada)
@@ -66,5 +69,16 @@
     enable = true;
     nssmdns4 = true;
     nssmdns6 = true;
+  };
+
+  # Optimize network services for faster boot
+  systemd.services = {
+    # Start avahi on-demand via socket activation
+    avahi-daemon.wantedBy = lib.mkForce [ ];
+  };
+
+  # Enable socket activation for avahi
+  systemd.sockets.avahi-daemon = {
+    wantedBy = [ "sockets.target" ];
   };
 }
