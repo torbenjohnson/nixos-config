@@ -8,6 +8,7 @@
       description = "Torben Johnson";
       extraGroups = [
         "wheel"
+        "render"
       ];
       initialPassword = "h";
       shell = pkgs.fish;
