@@ -61,6 +61,8 @@
       nvme-cli # NVMe management
       usbutils # USB utilities
       acpi # ACPI information
+      pciutils
+      libva-utils # VA-API utilities
 
       # GPU Tools
       vulkan-tools
