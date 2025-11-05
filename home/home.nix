@@ -111,6 +111,8 @@
       hyperfine
       perf
       dive
+      yek
+      ouch
     ];
   };
 
