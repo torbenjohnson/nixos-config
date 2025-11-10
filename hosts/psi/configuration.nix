@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ./disk-config.nix
     ../../modules/hardware/graphics.nix
+    ../../modules/hardware/rocm.nix
 
     # System
     ../../modules/system/boot.nix
