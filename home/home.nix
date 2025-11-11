@@ -153,10 +153,8 @@
 
     direnv = {
       enable = true;
+      silent = true;
       nix-direnv.enable = true;
-      config = {
-        log_format = "";
-      };
     };
 
     git = {
