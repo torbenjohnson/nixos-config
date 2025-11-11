@@ -139,8 +139,10 @@
         "Code/User/keybindings.json".source =
           config.lib.file.mkOutOfStoreSymlink "${configPath}/vscode/keybindings.json";
         "fish/config.fish".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/config.fish";
-        "fish/functions/theme_gruvbox.fish".source =
-          config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/functions/theme_gruvbox.fish";
+        "fish/conf.d/theme-gruvbox.fish".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/conf.d/theme-gruvbox.fish";
+        "fish/functions/k8s-login.fish".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/functions/k8s-login.fish";
         "ghostty/config".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/ghostty/config";
       };
   };
