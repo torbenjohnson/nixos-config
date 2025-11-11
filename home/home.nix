@@ -125,24 +125,24 @@
     };
 
     # Link native config files (editable without rebuild)
-    configFile = {
-      "helix/config.toml".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/helix/config.toml";
-      "helix/languages.toml".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/helix/languages.toml";
-      "git/config".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/git/config";
-      "Code/User/settings.json".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/vscode/settings.json";
-      "Code/User/keybindings.json".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/vscode/keybindings.json";
-      "fish/config.fish".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/fish/config.fish";
-      "fish/functions/theme_gruvbox.fish".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/fish/functions/theme_gruvbox.fish";
-      "ghostty/config".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/ghostty/config";
-    };
+    configFile =
+      let
+        configPath = "${config.home.homeDirectory}/nixos-config/home/config";
+      in
+      {
+        "helix/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/config.toml";
+        "helix/languages.toml".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/languages.toml";
+        "git/config".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/git/config";
+        "Code/User/settings.json".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/vscode/settings.json";
+        "Code/User/keybindings.json".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/vscode/keybindings.json";
+        "fish/config.fish".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/config.fish";
+        "fish/functions/theme_gruvbox.fish".source =
+          config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/functions/theme_gruvbox.fish";
+        "ghostty/config".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/ghostty/config";
+      };
   };
 
   programs = {
