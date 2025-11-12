@@ -1,5 +1,4 @@
-{ ... }:
-
+{ pkgs, ... }:
 {
   imports = [
     # Hardware
@@ -35,6 +34,12 @@
   };
 
   services.hardware.bolt.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    vault
+    kubectl
+    k9s
+  ];
 
   system.stateVersion = "25.05";
 }
