@@ -113,6 +113,12 @@
       dive
       yek
       ouch
+      audacity
+      samply
+      perf
+      perf-tools
+      valgrind
+      heaptrack
     ];
   };
 
