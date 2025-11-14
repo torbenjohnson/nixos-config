@@ -206,6 +206,8 @@
     ghostty.enable = true;
 
     nushell.enable = true;
+
+    uv.enable = true;
   };
 
   # Services
