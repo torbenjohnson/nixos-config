@@ -17,7 +17,7 @@
         CPU_MIN_PERF_ON_BAT = 0;
         CPU_MAX_PERF_ON_BAT = 20;
 
-        USB_AUTOSUSPEND = 1;
+        USB_AUTOSUSPEND = 0;
 
         DISK_APM_LEVEL_ON_BAT = "128 128";
         DISK_APM_LEVEL_ON_AC = "254 254";
