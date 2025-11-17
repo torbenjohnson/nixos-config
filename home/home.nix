@@ -120,6 +120,11 @@
       perf-tools
       valgrind
       heaptrack
+      just
+      hotspot
+      jujutsu
+      jjui
+      lazyjj
     ];
   };
 
