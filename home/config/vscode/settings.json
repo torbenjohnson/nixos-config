@@ -64,5 +64,6 @@
     "github.copilot.chat.customInstructionsInSystemMessage": false,
     "extensions.autoCheckUpdates": false,
     "update.mode": "none",
-    "explorer.confirmPasteNative": false
+    "explorer.confirmPasteNative": false,
+    "python.analysis.typeCheckingMode": "basic"
 }
