@@ -18,6 +18,9 @@
     };
   };
 
+  services.ntpd-rs.enable = true;
+  services.timesyncd.enable = false;
+
   # Set regulatory domain for WiFi (Canada)
   hardware.wirelessRegulatoryDatabase = true;
   boot.extraModprobeConfig = ''
