@@ -26,6 +26,13 @@
 
   networking.hostName = "psi";
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      22 # SSH port
+    ];
+  };
+
   fonts.fontconfig.subpixel = {
     rgba = "none";
     lcdfilter = "none";
