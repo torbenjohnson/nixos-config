@@ -9,6 +9,12 @@
       extraGroups = [
         "wheel"
         "render"
+        "video"
+        "audio"
+        "dialout"
+        "libvirtd"
+        "input"
+        "storage"
       ];
       initialPassword = "h";
       shell = pkgs.fish;
