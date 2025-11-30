@@ -14,6 +14,7 @@
     };
     nftables.enable = true;
     firewall = {
+      backend = "nftables";
       trustedInterfaces = [ "podman+" ];
     };
   };
