@@ -76,7 +76,7 @@
       # Media Applications
       spotify # Music streaming
       mpv # Media player
-      ffmpeg # Media processing
+      ffmpeg-full # Media processing
       obs-studio # Recording/streaming
       yt-dlp
       imagemagick
