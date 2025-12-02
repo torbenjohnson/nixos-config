@@ -1,4 +1,9 @@
-{ lib, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   networking = {
@@ -15,7 +20,11 @@
     nftables.enable = true;
     firewall = {
       backend = "nftables";
-      trustedInterfaces = [ "podman+" ];
+      trustedInterfaces = [
+        "podman+"
+        "tailscale0"
+      ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
     };
   };
 
@@ -74,6 +83,11 @@
     nssmdns4 = true;
     nssmdns6 = true;
   };
+
+  environment.systemPackages = [ pkgs.tailscale ];
+
+  # enable the tailscale service
+  services.tailscale.enable = true;
 
   # Optimize network services for faster boot
   systemd.services = {
