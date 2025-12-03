@@ -22,6 +22,7 @@
       backend = "nftables";
       trustedInterfaces = [
         "podman+"
+        "docker0"
         "tailscale0"
       ];
       allowedUDPPorts = [ config.services.tailscale.port ];
