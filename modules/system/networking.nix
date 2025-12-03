@@ -39,29 +39,43 @@
 
   systemd.network = {
     enable = true;
-    networks = {
-      "10-ethernet" = {
-        matchConfig.Name = "e*";
-        networkConfig = {
-          DHCP = "yes";
-          IPv6AcceptRA = true;
-          IPv6PrivacyExtensions = false;
-          MulticastDNS = true;
-        };
-        dhcpV4Config.RouteMetric = 100; # Prefer Ethernet
-        dhcpV6Config.RouteMetric = 100;
+    netdevs."30-br0" = {
+      netdevConfig = {
+        Kind = "bridge";
+        Name = "br0";
       };
-      "20-wireless" = {
-        matchConfig.Name = "wl*";
-        networkConfig = {
-          DHCP = "yes";
-          IPv6AcceptRA = true;
-          IPv6PrivacyExtensions = false;
-          MulticastDNS = true;
-        };
-        dhcpV4Config.RouteMetric = 600;
-        dhcpV6Config.RouteMetric = 600;
+    };
+    networks."10-ethernet" = {
+      matchConfig.Name = "e*";
+      networkConfig = {
+        Bridge = "br0";
+        DHCP = "no";
+        IPv6AcceptRA = false;
       };
+      linkConfig.RequiredForOnline = "enslaved";
+    };
+    networks."35-br0" = {
+      matchConfig.Name = "br0";
+      networkConfig = {
+        DHCP = "yes";
+        IPv6AcceptRA = true;
+        IPv6PrivacyExtensions = false;
+        MulticastDNS = true;
+      };
+      dhcpV4Config.RouteMetric = 100; # Prefer bridged Ethernet
+      dhcpV6Config.RouteMetric = 100;
+      linkConfig.RequiredForOnline = "routable";
+    };
+    networks."20-wireless" = {
+      matchConfig.Name = "wl*";
+      networkConfig = {
+        DHCP = "yes";
+        IPv6AcceptRA = true;
+        IPv6PrivacyExtensions = false;
+        MulticastDNS = true;
+      };
+      dhcpV4Config.RouteMetric = 600;
+      dhcpV6Config.RouteMetric = 600;
     };
   };
 
@@ -86,7 +100,6 @@
 
   environment.systemPackages = [ pkgs.tailscale ];
 
-  # enable the tailscale service
   services.tailscale.enable = true;
 
   # Optimize network services for faster boot
