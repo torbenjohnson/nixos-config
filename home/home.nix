@@ -126,6 +126,11 @@
       jjui
       lazyjj
     ];
+
+    file = {
+      ".ssh/config".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/config/ssh/config";
+    };
   };
 
   # XDG Base Directory Specification
@@ -145,7 +150,6 @@
         "helix/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/config.toml";
         "helix/languages.toml".source =
           config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/languages.toml";
-        "ssh/config".source = config.lib.file.mkOutOfStoreSymlink "~/.ssh/config";
         "git/config".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/git/config";
         "Code/User/settings.json".source =
           config.lib.file.mkOutOfStoreSymlink "${configPath}/vscode/settings.json";
