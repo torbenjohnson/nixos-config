@@ -48,7 +48,6 @@
     "workbench.layoutControl.enabled": false,
     "nix.enableLanguageServer": true,
     "nix.formatterPath": "nixfmt",
-    "chat.agent.thinkingStyle": "expanded",
     "chat.agent.maxRequests": 60,
     "chat.checkpoints.showFileChanges": true,
     "chat.fontSize": 16,
@@ -66,5 +65,7 @@
     "update.mode": "none",
     "explorer.confirmPasteNative": false,
     "python.analysis.typeCheckingMode": "basic",
-    "ruff.nativeServer": true
+    "files.associations": {
+        "justfile": "makefile"
+    }
 }
