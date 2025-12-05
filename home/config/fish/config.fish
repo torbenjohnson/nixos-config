@@ -7,6 +7,8 @@ set -g fish_greeting
 
 set -x ELECTRON_OZONE_PLATFORM_HINT wayland
 
+set -x VAULT_ADDR https://vault.fundamentum-iot.com
+
 set -Ux EDITOR hx
 set -Ux VISUAL hx
 set -Ux SUDO_EDITOR
