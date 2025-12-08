@@ -12,6 +12,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tactical-rmm = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://bitbucket.org/amotus/tactical-rmm-nix.git";
+    };
   };
   outputs =
     {
@@ -19,7 +23,7 @@
       disko,
       home-manager,
       ...
-    }:
+    }@inputs:
     {
       nixosConfigurations.eta = nixpkgs.lib.nixosSystem {
         modules = [
@@ -59,6 +63,7 @@
       };
 
       nixosConfigurations.lp-0098 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager

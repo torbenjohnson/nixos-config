@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
+    inputs.tactical-rmm.nixosModules.default
     # Hardware
     ./hardware-configuration.nix
     ./disk-config.nix
@@ -40,6 +41,12 @@
     kubectl
     k9s
   ];
+
+  services.tacticalAgent = {
+    enable = true;
+    apiUrl = "https://tactical-api.amotus.com";
+    tokenFile = "/home/tor/nixos-config/hosts/lp-0098/rmm_token";
+  };
 
   system.stateVersion = "25.05";
 }
