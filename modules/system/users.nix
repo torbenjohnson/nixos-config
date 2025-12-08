@@ -15,6 +15,7 @@
         "libvirtd"
         "input"
         "storage"
+        "docker"
       ];
       initialPassword = "h";
       shell = pkgs.fish;
