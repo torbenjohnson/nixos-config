@@ -20,9 +20,6 @@
     "rust-analyzer.diagnostics.previewRustcOutput": true,
     "rust-analyzer.diagnostics.styleLints.enable": true,
     "rust-analyzer.check.command": "clippy",
-    "rust-analyzer.rustfmt.extraArgs": [
-        "+nightly"
-    ],
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "rust-analyzer.cargo.targetDir": true,
     "terminal.integrated.defaultProfile.linux": "fish",
@@ -67,5 +64,14 @@
     "python.analysis.typeCheckingMode": "basic",
     "files.associations": {
         "justfile": "makefile"
-    }
+    },
+    "extensions.ignoreRecommendations": true,
+    "claudeCode.preferredLocation": "sidebar",
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "psi.local": "linux",
+        "psi": "linux"
+    },
+    "remote.SSH.useExecServer": false
 }
