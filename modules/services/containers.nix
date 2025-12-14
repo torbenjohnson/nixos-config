@@ -35,6 +35,7 @@ in
 
     docker = {
       enable = true;
+      enableOnBoot = false;
       daemon.settings = {
         bip = "${dockerIpv4Gateway}/24";
         "fixed-cidr" = dockerIpv4Subnet;
