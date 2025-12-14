@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  system.nixos-init.enable = true;
+  system.etc.overlay.enable = true;
+  services.userborn.enable = true;
+  systemd.sysusers.enable = false;
   boot = {
     loader = {
       systemd-boot = {
@@ -20,8 +24,6 @@
     consoleLogLevel = 3;
 
     kernelPackages = pkgs.linuxPackages_latest;
-
-    plymouth.enable = true;
 
     initrd = {
       systemd.enable = true;
