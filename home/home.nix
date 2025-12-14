@@ -214,8 +214,10 @@
       ];
     };
 
-    ghostty.enable = true;
-
+    ghostty = {
+      enable = true;
+      systemd.enable = true;
+    };
     nushell.enable = true;
 
     uv.enable = true;
