@@ -125,6 +125,7 @@
       jujutsu
       jjui
       lazyjj
+      (chromium.override { enableWideVine = true; })
     ];
 
     file = {
@@ -168,7 +169,6 @@
     home-manager.enable = true;
 
     firefox.enable = true;
-    chromium.enable = true;
 
     direnv = {
       enable = true;
