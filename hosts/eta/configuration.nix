@@ -23,6 +23,9 @@
     ../../modules/services/ssh.nix
   ];
 
+  boot.kernelParams = [ "nvme.noacpi=1" ];
+  boot.blacklistedKernelModules = [ "cros-usbpd-charger" ];
+
   networking.hostName = "eta";
 
   system.stateVersion = "25.05";
