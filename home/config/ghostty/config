@@ -3,4 +3,5 @@ window-decoration = false
 font-family = "Monospace Neon"
 cursor-style-blink = false
 command = fish --login --interactive
+window-inherit-working-directory = false
 working-directory = home
