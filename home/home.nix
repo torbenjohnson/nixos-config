@@ -186,19 +186,6 @@
 
     vscode = {
       enable = true;
-      profiles.default.extensions = with pkgs.vscode-extensions; [
-        jnoortheen.nix-ide
-        rust-lang.rust-analyzer
-        # tombi-toml.tombi # Not currently available
-        # rvben.rumdl
-        ms-python.python
-        ms-python.vscode-pylance
-        jdinhlife.gruvbox
-        golang.go
-        redhat.vscode-yaml
-        timonwong.shellcheck
-        ms-vscode-remote.remote-ssh
-      ];
     };
 
     zed-editor = {
