@@ -162,6 +162,7 @@
         "fish/functions/k8s-login.fish".source =
           config.lib.file.mkOutOfStoreSymlink "${configPath}/fish/functions/k8s-login.fish";
         "ghostty/config".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/ghostty/config";
+        "zed/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/zed/settings.json";
       };
   };
 

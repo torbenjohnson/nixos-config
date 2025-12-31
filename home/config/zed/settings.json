@@ -2,18 +2,9 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Gruvbox Dark Hard",
   },
-  "auto_install_extensions": {
-    "basher": true,
-    "dockerfile": true,
-    "just-language-server": true,
-    "justfile": true,
-    "nix": true,
-    "ruff": true,
-    "toml": true
-  },
-  "helix_mode": true,
+  "buffer_font_family": "Monaspace Neon",
   "title_bar": {
     "show_branch_icon": false,
     "show_branch_name": false,
@@ -21,9 +12,42 @@
     "show_onboarding_banner": false,
     "show_user_picture": false,
     "show_sign_in": false,
-    "show_menus": false
+    "show_menus": false,
   },
+  "helix_mode": true,
   "relative_line_numbers": "enabled",
   "cursor_shape": "block",
-  "cursor_blink": false
+  "cursor_blink": false,
+  "current_line_highlight": "gutter",
+  "auto_install_extensions": {
+    "basher": true,
+    "dockerfile": true,
+    "just-language-server": true,
+    "justfile": true,
+    "nix": true,
+    "ruff": true,
+    "toml": true,
+  },
+  "load_direnv": "shell_hook",
+  "auto_update": false,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true,
+        },
+        "diagnostics": {
+          "experimental": {
+            "enable": true,
+          },
+        },
+        "cargo": {
+          "allTargets": false,
+        },
+        "check": {
+          "workspace": false,
+        },
+      },
+    },
+  },
 }
