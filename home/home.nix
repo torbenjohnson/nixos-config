@@ -18,8 +18,9 @@
       tokei
 
       # Nix Development
-      nixfmt-rfc-style # Nix formatter
+      nixfmt # Nix formatter
       nil # Nix LSP
+      nixd
       nix-tree
       nix-output-monitor
 
@@ -71,7 +72,7 @@
       # GUI System Monitoring
       mission-center # System monitor
       resources # GNOME resources monitor
-      impala # System monitor
+      impala # iwd tui
 
       # Media Applications
       spotify # Music streaming
@@ -126,6 +127,7 @@
       jjui
       lazyjj
       (chromium.override { enableWideVine = true; })
+      obsidian
     ];
 
     file = {
