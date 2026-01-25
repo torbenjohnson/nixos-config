@@ -28,5 +28,7 @@
 
   networking.hostName = "eta";
 
+  programs.steam.enable = true;
+
   system.stateVersion = "25.05";
 }
