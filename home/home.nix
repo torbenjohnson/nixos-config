@@ -23,6 +23,7 @@
       nixd
       nix-tree
       nix-output-monitor
+      nh
 
       # CLI Utilities - File Management
       ripgrep # Fast grep alternative
@@ -65,6 +66,7 @@
       acpi # ACPI information
       pciutils
       libva-utils # VA-API utilities
+      smartmontools
 
       # GPU Tools
       vulkan-tools
