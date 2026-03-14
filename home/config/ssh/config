@@ -1,5 +1,6 @@
 Host micro*
     User root
-
+    
+ObscureKeystrokeTiming=no
 Ciphers aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com
 Compression no
