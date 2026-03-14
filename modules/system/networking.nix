@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }:
@@ -19,7 +18,6 @@
     };
     nftables.enable = true;
     firewall = {
-      backend = "nftables";
       trustedInterfaces = [
         "podman+"
         "docker0"
@@ -50,7 +48,7 @@
       matchConfig.Name = "e*";
       networkConfig = {
         Bridge = "br0";
-        DHCP = "no";
+        DHCP = false;
         IPv6AcceptRA = false;
       };
       linkConfig.RequiredForOnline = "enslaved";
@@ -58,10 +56,11 @@
     networks."35-br0" = {
       matchConfig.Name = "br0";
       networkConfig = {
-        DHCP = "yes";
+        DHCP = true;
         IPv6AcceptRA = true;
         IPv6PrivacyExtensions = false;
-        MulticastDNS = true;
+        MulticastDNS = false;
+        KeepConfiguration = "dynamic";
       };
       dhcpV4Config.RouteMetric = 100; # Prefer bridged Ethernet
       dhcpV6Config.RouteMetric = 100;
@@ -70,26 +69,27 @@
     networks."20-wireless" = {
       matchConfig.Name = "wl*";
       networkConfig = {
-        DHCP = "yes";
+        DHCP = true;
         IPv6AcceptRA = true;
         IPv6PrivacyExtensions = false;
-        MulticastDNS = true;
+        MulticastDNS = false;
+        KeepConfiguration = "dynamic";
       };
       dhcpV4Config.RouteMetric = 600;
       dhcpV6Config.RouteMetric = 600;
+      # WiFi is a fallback link — don't block network-online.target waiting for it
+      linkConfig.RequiredForOnline = false;
     };
   };
 
   services.resolved = {
     enable = true;
-    settings = {
-      Resolve = {
-        DNSSEC = "false";
-        FallbackDNS = [
-          "1.1.1.1"
-          "8.8.8.8"
-        ];
-      };
+    settings.Resolve = {
+      Cache = true;
+      FallbackDNS = [
+        "1.1.1.1"
+        "8.8.8.8"
+      ];
     };
   };
 
@@ -98,8 +98,6 @@
     nssmdns4 = true;
     nssmdns6 = true;
   };
-
-  environment.systemPackages = [ pkgs.tailscale ];
 
   services.tailscale.enable = true;
 
