@@ -72,6 +72,7 @@
         emoji = [
           "Noto Color Emoji"
           "Font Awesome 6 Free"
+          "Symbola"
         ];
       };
 
