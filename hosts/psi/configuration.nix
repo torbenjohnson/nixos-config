@@ -32,11 +32,6 @@
     ];
   };
 
-  fonts.fontconfig.subpixel = {
-    rgba = "none";
-    lcdfilter = "none";
-  };
-
   programs.steam.enable = true;
 
   system.stateVersion = "25.05";
