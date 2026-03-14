@@ -101,7 +101,7 @@
 
       # Miscellaneous
       gcr # GNOME crypto services
-      xorg.xeyes # X11 test utility
+      xeyes # X11 test utility
       choose
       atuin
       stress-ng
