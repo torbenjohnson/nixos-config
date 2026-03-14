@@ -26,26 +26,32 @@
     "show_tab_bar_buttons": false,
   },
   "show_edit_predictions": false,
-  // "project_panel": {"button": false },
-  // "outline_panel": {"button": false },
-  "collaboration_panel": { "button": false },
-  // "git_panel": {"button": false },
-  "notification_panel": { "button": false },
-  "agent": { "button": false },
-  "debugger": { "button": false },
-  // "diagnostics": {"button": false },
-  "search": { "button": false },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "notification_panel": {
+    "button": false,
+  },
+  "agent": {
+    "button": false,
+  },
+  "debugger": {
+    "button": false,
+  },
+  "search": {
+    "button": false,
+  },
   "gutter": {
     "line_numbers": true,
     "runnables": false,
     "breakpoints": false,
     "folds": false,
-    "min_line_number_digits": 3, // Reserve space for N digit line numbers
+    "min_line_number_digits": 3,
   },
-  // "status_bar": {
-  //   "experimental.show": false,
-  // },
-  "scrollbar": { "git_diff": false, "show": "auto" },
+  "scrollbar": {
+    "git_diff": false,
+    "show": "auto",
+  },
   "helix_mode": true,
   "relative_line_numbers": "enabled",
   "cursor_shape": "block",
@@ -57,13 +63,19 @@
     "nix": true,
     "ruff": true,
     "toml": true,
+    "just-language-server": true,
+    "justfile": true,
   },
   "load_direnv": "shell_hook",
   "auto_update": false,
   "git": {
-    "inline_blame": { "enabled": false },
+    "inline_blame": {
+      "enabled": false,
+    },
   },
-  "inlay_hints": { "enabled": true },
+  "inlay_hints": {
+    "enabled": true,
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
