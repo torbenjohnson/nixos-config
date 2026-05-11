@@ -15,7 +15,10 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-cosmic ];
-    config.cosmic.default = [ "cosmic" "*" ];
+    config.cosmic.default = [
+      "cosmic"
+      "*"
+    ];
   };
 
   systemd.services = {
