@@ -25,6 +25,8 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
+    zfs.forceImportRoot = false;
+
     initrd = {
       systemd.enable = true;
       compressor = "zstd";

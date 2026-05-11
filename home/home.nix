@@ -144,6 +144,7 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
     };
 
     # Link native config files (editable without rebuild)
@@ -173,7 +174,10 @@
   programs = {
     home-manager.enable = true;
 
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+    };
 
     direnv = {
       enable = true;
