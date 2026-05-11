@@ -24,58 +24,43 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+
+      mkHost =
+        hostModule:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.tor = import ./home/home.nix;
+              };
+            }
+            hostModule
+          ];
+        };
+    in
     {
-      nixosConfigurations.eta = nixpkgs.lib.nixosSystem {
-        modules = [
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.tor = import ./home/home.nix;
-            };
-          }
-          ./hosts/eta/configuration.nix
-        ];
-      };
+      formatter.${system} = pkgs.nixfmt-tree;
 
-      nixosConfigurations.psi = nixpkgs.lib.nixosSystem {
-        modules = [
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.tor = import ./home/home.nix;
-            };
-          }
-          ./hosts/psi/configuration.nix
-        ];
-      };
+      nixosConfigurations = {
+        eta = mkHost ./hosts/eta/configuration.nix;
+        psi = mkHost ./hosts/psi/configuration.nix;
+        lp-0098 = mkHost ./hosts/lp-0098/configuration.nix;
 
-      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
-        modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-          ./hosts/iso/configuration.nix
-        ];
-      };
-
-      nixosConfigurations.lp-0098 = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.tor = import ./home/home.nix;
-            };
-          }
-          ./hosts/lp-0098/configuration.nix
-        ];
+        iso = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            ./hosts/iso/configuration.nix
+          ];
+        };
       };
     };
 }
