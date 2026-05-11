@@ -63,7 +63,6 @@
         KeepConfiguration = "dynamic";
       };
       dhcpV4Config.RouteMetric = 100; # Prefer bridged Ethernet
-      dhcpV6Config.RouteMetric = 100;
       linkConfig.RequiredForOnline = "routable";
     };
     networks."20-wireless" = {
@@ -76,7 +75,6 @@
         KeepConfiguration = "dynamic";
       };
       dhcpV4Config.RouteMetric = 600;
-      dhcpV6Config.RouteMetric = 600;
       # WiFi is a fallback link — don't block network-online.target waiting for it
       linkConfig.RequiredForOnline = false;
     };
