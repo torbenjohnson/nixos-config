@@ -21,6 +21,7 @@
     ../../modules/services/audio.nix
     ../../modules/services/desktop.nix
     ../../modules/services/power.nix
+    ../../modules/services/swap.nix
     ../../modules/services/containers.nix
     ../../modules/services/ssh.nix
   ];
