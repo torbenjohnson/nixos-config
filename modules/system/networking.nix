@@ -104,6 +104,8 @@
   systemd.services = {
     # Start avahi on-demand via socket activation
     avahi-daemon.wantedBy = lib.mkForce [ ];
+    # Tailscale starts manually on this host
+    tailscaled.wantedBy = lib.mkForce [ ];
   };
 
   # Enable socket activation for avahi
