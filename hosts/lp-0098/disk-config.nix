@@ -51,6 +51,11 @@
   };
 
   boot.initrd.systemd.enable = true;
+  boot.initrd.kernelModules = [
+    "usbhid"
+    "hid_generic"
+    "hid"
+  ];
   security.tpm2.enable = true;
 
   fileSystems."/" = {
