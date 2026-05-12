@@ -84,6 +84,7 @@
     enable = true;
     settings.Resolve = {
       Cache = true;
+      MulticastDNS = false;
       FallbackDNS = [
         "1.1.1.1"
         "8.8.8.8"
