@@ -1,6 +1,7 @@
 if status is-interactive
     theme_gruvbox dark hard
     direnv hook fish | source
+    alias zed="zeditor"
 end
 
 set -g fish_greeting
