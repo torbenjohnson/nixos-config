@@ -1,5 +1,8 @@
+{ inputs, ... }:
 {
   nix = {
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    nixPath = [ "nixpkgs=flake:nixpkgs" ];
     settings = {
       experimental-features = [
         "nix-command"
