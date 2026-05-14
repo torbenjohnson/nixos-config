@@ -130,6 +130,9 @@
       lazyjj
       (chromium.override { enableWideVine = true; })
       obsidian
+      comma
+      papers
+      nautilus
     ];
 
     file = {
@@ -147,12 +150,23 @@
       setSessionVariables = false;
     };
 
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = [ "org.gnome.Papers.desktop" ];
+        "application/x-terminal-emulator" = [ "com.mitchellh.ghostty.desktop" ];
+        "x-scheme-handler/claude-cli" = [ "claude-code-url-handler.desktop" ];
+        "x-scheme-handler/terminal" = [ "com.mitchellh.ghostty.desktop" ];
+      };
+    };
+
     # Link native config files (editable without rebuild)
     configFile =
       let
         configPath = "${config.home.homeDirectory}/nixos-config/home/config";
       in
       {
+        "mimeapps.list".force = true;
         "helix/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/config.toml";
         "helix/languages.toml".source =
           config.lib.file.mkOutOfStoreSymlink "${configPath}/helix/languages.toml";
