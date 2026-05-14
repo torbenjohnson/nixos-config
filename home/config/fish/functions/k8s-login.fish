@@ -6,12 +6,12 @@ function k8s-login
         return 1
     end
 
-    # Login to Vault first
-    vault login -method=oidc role=aad
+    # Login to OpenBao first
+    bao login -method=oidc role=aad
     or return 1
 
     # Get the token
-    set token (vault write kubernetes/creds/port-forward kubernetes_namespace="$namespace" \
+    set token (bao write kubernetes/creds/port-forward kubernetes_namespace="$namespace" \
         | grep -E '^service_account_token' | awk '{ print $2 }')
 
     if test -z "$token"

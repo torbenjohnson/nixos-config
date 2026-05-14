@@ -38,7 +38,6 @@
   services.hardware.bolt.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vault
     kubectl
     k9s
   ];
