@@ -17,6 +17,9 @@
     ../../modules/system/programs.nix
     ../../modules/system/users.nix
 
+    # Work
+    ./work.nix
+
     # Services
     ../../modules/services/audio.nix
     ../../modules/services/desktop.nix
@@ -42,11 +45,11 @@
     k9s
   ];
 
-  services.tacticalAgent = {
-    enable = true;
-    apiUrl = "https://tactical-api.amotus.com";
-    tokenFile = "/home/tor/nixos-config/hosts/lp-0098/rmm_token";
-  };
+  # services.tacticalAgent = {
+  #   enable = true;
+  #   apiUrl = "https://tactical-api.amotus.com";
+  #   tokenFile = "/home/tor/nixos-config/hosts/lp-0098/rmm_token";
+  # };
 
   system.stateVersion = "25.05";
 }
