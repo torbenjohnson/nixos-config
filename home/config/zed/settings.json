@@ -1,20 +1,108 @@
 {
+  "status_bar": {
+    "active_language_button": false
+  },
+  "prettier": {
+    "allowed": true,
+  },
+  "inline_code_actions": false,
+  "tasks": {
+    "enabled": false,
+  },
+  "use_autoclose": false,
+  "indent_guides": {
+    "enabled": false,
+    "coloring": "fixed",
+    "background_coloring": "disabled",
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "expand_excerpt_lines": 10,
+  "excerpt_context_lines": 10,
+  "which_key": {
+    "enabled": true,
+  },
+  "text_rendering_mode": "subpixel",
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "vertical_scroll_margin": 12.0,
+  "terminal": {
+    "scroll_multiplier": 1.0,
+    "alternate_scroll": "on",
+    "scrollbar": {
+      "show": "never",
+    },
+  },
+  "proxy": "",
+  "project_panel": {
+    "dock": "right",
+  },
+  "outline_panel": {
+    "button": false,
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "right",
+  },
   "agent": {
+    "single_file_review": true,
+    "enable_feedback": false,
+    "dock": "left",
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {
+        "create_directory": {
+          "always_allow": [
+            {
+              "pattern": "^/home/tor/code/work/nuvola/nuvola-mobile-app/src/features/notifications/hooks/",
+            },
+          ],
+        },
+        "move_path": {
+          "default": "allow",
+        },
+        "delete_path": {
+          "always_allow": [
+            {
+              "pattern": "^nuvola-gateway-api/internal/notification/",
+            },
+            {
+              "pattern": "^nuvola-mobile-app/src/features/notifications/hooks/",
+            },
+            {
+              "pattern": "^nuvola-mobile-app/src/features/notifications/models/",
+            },
+            {
+              "pattern": "^nuvola-mobile-app/src/features/notifications/",
+            },
+          ],
+        },
+        "open": {
+          "default": "allow",
+        },
+        "terminal": {
+          "default": "allow",
+        },
+        "fetch": {
+          "default": "allow",
+        },
+      },
+    },
     "default_model": {
+      "effort": "high",
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "gpt-5.5",
       "enable_thinking": true,
-      "effort": "medium",
     },
     "favorite_models": [],
     "model_parameters": [],
   },
   "cli_default_open_behavior": "new_window",
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Gruvbox Dark Hard",
-  },
+  "theme": "Gruvbox Dark Hard",
   "buffer_font_family": "Monaspace Neon",
   "title_bar": {
     "show_branch_name": false,
@@ -26,7 +114,7 @@
   },
   "toolbar": {
     "breadcrumbs": false,
-    "agent_review": false,
+    "agent_review": true,
     "code_actions": false,
     "quick_actions": false,
     "selections_menu": false,
@@ -37,11 +125,9 @@
   },
   "show_edit_predictions": false,
   "collaboration_panel": {
+    "dock": "right",
     "button": false,
   },
-  // "agent": {
-  //   "button": false,
-  // },
   "debugger": {
     "button": false,
   },
@@ -56,7 +142,9 @@
     "min_line_number_digits": 3,
   },
   "scrollbar": {
-    "git_diff": false,
+    "diagnostics": "none",
+    "cursors": false,
+    "git_diff": true,
     "show": "auto",
   },
   "helix_mode": true,
@@ -76,6 +164,9 @@
   "load_direnv": "shell_hook",
   "auto_update": false,
   "git": {
+    "blame": {
+      "show_avatar": false,
+    },
     "inline_blame": {
       "enabled": false,
     },
@@ -102,5 +193,25 @@
         },
       },
     },
+    "tinymist": {
+      "initialization_options": {
+        "preview": {
+          "background": {
+            "enabled": true,
+          },
+        },
+      },
+      "settings": {
+        "exportPdf": "onSave",
+        "outputPath": "$root/$name",
+        "formatterMode": "typstyle",
+      },
+    },
   },
+  "languages": {
+    "Typst": {
+      "soft_wrap": "none",
+    },
+  },
+  "edit_predictions": { "provider": "none" },
 }
