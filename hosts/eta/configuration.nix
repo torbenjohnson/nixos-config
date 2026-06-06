@@ -26,6 +26,8 @@
   boot.kernelParams = [ "nvme.noacpi=1" ];
   boot.blacklistedKernelModules = [ "cros-usbpd-charger" ];
 
+  users.users.tor.extraGroups = [ "adbusers" ];
+
   networking.hostName = "eta";
 
   programs.steam.enable = true;
