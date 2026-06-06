@@ -130,7 +130,9 @@
       lazyjj
       (chromium.override { enableWideVine = true; })
       obsidian
+      android-tools
       comma
+      freecad
       papers
       nautilus
     ];
@@ -223,6 +225,8 @@
         "toml"
       ];
     };
+
+    nh.enable = true;
 
     ghostty = {
       enable = true;
